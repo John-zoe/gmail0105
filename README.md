@@ -11,14 +11,3 @@ gmall-item-service  port:8072
 
 
 
-service:
-mapper  访问数据层接口
-serviceimpl  业务层实现类
-
-api:
-bean  数据库对象
-service  业务层接口
-
-web:
-controller  客户层类调用service层方法
-

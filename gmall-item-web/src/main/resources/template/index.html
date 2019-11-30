@@ -4,7 +4,15 @@
     <meta charset="UTF-8"/>
     <title>Title</title>
 </head>
-<body>
-    halo!!!!!!!!!!!!!!!!
+
+        hello thymeleaf!
+        <br/>
+        <!--取值 -->
+        {hello}
+        <br/>
+        <p th:text="${hello}">打底值</p>
+
+        <!--/*@thymesVar id="list" type="java"*/-->
+        <p th:each="str:${list}" th:text="${str}"></p>
 </body>
 </html>

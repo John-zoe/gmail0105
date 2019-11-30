@@ -1,11 +1,12 @@
 package com.pis.gmall.manage.service.serviceImpl;
 
-import com.pis.gmall.bean.PmsBaseAttrInfo;
+
 import com.pis.gmall.bean.PmsBaseSaleAttr;
 import com.pis.gmall.bean.PmsProductInfo;
-import com.pis.gmall.manage.mapper.PmsBaseAttrInfoMapper;
+import com.pis.gmall.bean.PmsProductSaleAttr;
 import com.pis.gmall.manage.mapper.PmsBaseSaleAttrMapper;
 import com.pis.gmall.manage.mapper.PmsProductInfoMapper;
+import com.pis.gmall.manage.mapper.PmsProductSaleAttrMapper;
 import com.pis.gmall.service.SpuService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -17,6 +18,8 @@ public class SpuServiceImpl implements SpuService {
     PmsProductInfoMapper pmsProductInfoMapper;
     @Autowired
     PmsBaseSaleAttrMapper pmsBaseSaleAttrMapper;
+    @Autowired
+    PmsProductSaleAttrMapper pmsProductSaleAttrMapper;
 
     @Override
     public List<PmsProductInfo> spuList(String catalog3Id) {
@@ -30,4 +33,12 @@ public class SpuServiceImpl implements SpuService {
     public List<PmsBaseSaleAttr> baseSaleAttrList() {
         return pmsBaseSaleAttrMapper.selectAll();
     }
+
+    @Override
+    public List<PmsProductSaleAttr> spuSaleAttrListCheckBySku(String spuId, String skuId) {
+
+        List<PmsProductSaleAttr> pmsProductSaleAttrs = pmsProductSaleAttrMapper.selectSpuSaleAttrListCheckBySku(spuId,skuId);
+        return pmsProductSaleAttrs;
+    }
+
 }

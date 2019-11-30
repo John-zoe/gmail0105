@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
+import java.util.Set;
 
 
 @Service
@@ -72,9 +73,15 @@ public class AttrServiceImpl implements AttrService {
     public List<PmsBaseAttrValue> getAttrValueList(String attrId) {
         PmsBaseAttrValue pmsBaseAttrValue = new PmsBaseAttrValue();
         pmsBaseAttrValue.setAttrId(attrId);
-
         List<PmsBaseAttrValue> pmsBaseAttrValues = pmsBaseAttrValueMapper.select(pmsBaseAttrValue);
         return pmsBaseAttrValues;
+    }
+
+    @Override
+    public List<PmsBaseAttrInfo> getAttrInfoByValueId(Set<String> valueIdSet) {
+        String valueIds = StringUtils.join(valueIdSet, ","); //in(41,45,46)
+        List<PmsBaseAttrInfo> pmsBaseAttrInfos= pmsBaseAttrInfoMapper.selectAttrInfoByValueId(valueIds);
+        return pmsBaseAttrInfos;
     }
 
 

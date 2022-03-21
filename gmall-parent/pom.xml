@@ -26,7 +26,7 @@
         <httpclient.version>4.5.5</httpclient.version>
         <commons-lang3.version>3.7</commons-lang3.version>
         <commons-beanutils.version>1.9.3</commons-beanutils.version>
-        <dubbo.version>2.6.0</dubbo.version>
+        <dubbo.version>2.6.9</dubbo.version>
         <zkclient.version>0.10</zkclient.version>
         <!-- <dubbo-starter.version>1.0.10</dubbo-starter.version>-->
         <nekohtml.version>1.9.20</nekohtml.version>
